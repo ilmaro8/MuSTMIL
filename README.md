@@ -54,6 +54,7 @@ Script to train the CNN at WSI-level, using an embedding-based MIL CNN:
   * -f: if True an embedding layer with 128 nodes is inserted before the output layer
   * -m: magnifications level selected (m1_m2)
   * -i: path where to find the csvs including the csv files with the partitions
+  * -a: weight of alpha and beta parameters
   * -o: path where CNN’s weights will be stored
   * -w: path where the WSIs’ patches are stored.
 
@@ -66,7 +67,7 @@ Script to train the CNN at WSI-level, using an embedding-based MIL CNN:
   * -p: pooling layer for the MIL CNN
   * -t: task (binary/multilabel)
   * -f: if True an embedding layer with 128 nodes is inserted before the output layer
-  * -w: path where CNN’s weights are stored
+  * -n: path where CNN’s weights are stored
   * -i: path where to find the csvs including the csv files with the partitions
   * -w: path where the WSIs’ patches are stored
   
@@ -78,10 +79,11 @@ Multi-scale output of the MuSTMIL CNN
   * -p: pooling layer for the MIL CNN
   * -t: task (binary/multilabel)
   * -f: if True an embedding layer with 128 nodes is inserted before the output layer
-  * -w: path where CNN’s weights are stored
+  * -n: path where CNN’s weights are stored
+  * -m: magnification to use (m1_m2).
   * -i: path where to find the csvs including the csv files with the partitions
   * -w: path where the WSIs’ patches are stored
-  * -m: magnification to use (m1_m2).
+  
 
 ### Single Scale on Multi-scale branches
 Single-scale output of the MuSTMIL CNN
