@@ -11,9 +11,6 @@ Paper link:
 ## Requirements
 Python==3.6.9, albumentations==0.1.8, numpy==1.17.3, opencv==4.2.0, pandas==0.25.2, pillow==6.1.0, torchvision==0.8.1, pytorch==1.7.0
 
-## Best models
-- The best model for the MuSTMIL CNN is available [here](...).
-
 ## Pre-Processing
 The WSIs are split in 224x224 pixels patches, from magnification 5/10x. 
 The methods used to extract the patches come from [Multi_Scale_Tools library](https://github.com/sara-nl/multi-scale-tools)
