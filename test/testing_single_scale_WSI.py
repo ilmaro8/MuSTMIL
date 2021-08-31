@@ -23,21 +23,18 @@ print("CUDA devices available " + str(torch.cuda.device_count()))
 
 #parser parameters
 parser = argparse.ArgumentParser(description='Configurations to train models.')
-parser.add_argument('-n', '--N_EXP', help='number of experiment',type=int, default=0)
 parser.add_argument('-c', '--CNN', help='cnn_to_use',type=str, default='resnet34')
 parser.add_argument('-b', '--BATCH_SIZE', help='batch_size',type=int, default=512)
 parser.add_argument('-p', '--pool', help='pooling algorithm',type=str, default='att')
 parser.add_argument('-t', '--TASK', help='task (binary/multilabel)',type=str, default='multilabel')
 parser.add_argument('-m', '--MAG', help='magnification to select',type=str, default='10')
 parser.add_argument('-f', '--features', help='features_to_use: embedding (True) or features from CNN (False)',type=bool, default=True)
-parser.add_argument('-m', '--model', help='path of the model to load',type=str, default='./model/')
+parser.add_argument('-n', '--model', help='path of the model to load',type=str, default='./model/')
 parser.add_argument('-i', '--input', help='path of input csv',type=str, default='./model/')
 parser.add_argument('-w', '--wsi_folder', help='path where WSIs are stored',type=str, default='./images/')
 
 args = parser.parse_args()
 
-N_EXP = args.N_EXP
-N_EXP_str = str(N_EXP)
 CNN_TO_USE = args.CNN
 BATCH_SIZE = args.BATCH_SIZE
 BATCH_SIZE_str = str(BATCH_SIZE)
@@ -49,7 +46,6 @@ INPUT_DATA = args.input
 MODEL_PATH = args.model
 WSI_FOLDER = args.wsi_folder
 
-seed = N_EXP
 torch.manual_seed(seed)
 if torch.cuda.is_available():
 	torch.cuda.manual_seed_all(seed)
